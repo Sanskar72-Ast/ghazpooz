@@ -97,6 +97,14 @@ body {
   background: var(--ghz-bg);
 }
 
+.ghz-collage--mobile {
+  display: none;
+}
+
+.ghz-collage--desktop {
+  display: flex;
+}
+
 .ghz-slice {
   flex: 1 1 0;
   min-width: 0;
@@ -162,18 +170,48 @@ body {
     padding: 0 0 22px;
   }
 
-  .ghz-collage {
+  .ghz-collage--desktop {
+    display: none;
+  }
+
+  .ghz-collage--mobile {
+    display: block;
     height: 218px;
     width: 100%;
     padding: 0 22px;
     box-sizing: border-box;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
+    overflow: hidden;
   }
 
-  .ghz-slice {
-    flex: 0 0 164px;
-    scroll-snap-align: start;
+  .ghz-marqueeTrack {
+    --ghz-marquee-item: 164px;
+    --ghz-marquee-gap: 21px;
+    --ghz-marquee-count: 4;
+    display: flex;
+    gap: var(--ghz-marquee-gap);
+    height: 218px;
+    will-change: transform;
+    animation: ghz-marquee 25s linear infinite;
+  }
+
+  .ghz-collage--mobile .ghz-slice {
+    flex: 0 0 var(--ghz-marquee-item);
+    height: 218px;
+  }
+}
+
+@keyframes ghz-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc((var(--ghz-marquee-item) + var(--ghz-marquee-gap)) * var(--ghz-marquee-count) * -1));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ghz-marqueeTrack {
+    animation: none;
+    transform: none;
   }
 }

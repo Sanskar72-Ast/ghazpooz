@@ -55,7 +55,7 @@ export default function App() {
       </section>
 
       <section className="ghz-right" aria-hidden="true">
-        <div className="ghz-collage">
+        <div className="ghz-collage ghz-collage--desktop">
           <div className="ghz-slice ghz-slice--a">
             <img alt="" src={imgDitheredImage20260210T1657231} />
           </div>
@@ -67,6 +67,36 @@ export default function App() {
           </div>
           <div className="ghz-slice ghz-slice--d">
             <img alt="" src={imgDitheredImage20260210T1703382} />
+          </div>
+        </div>
+
+        <div className="ghz-collage ghz-collage--mobile">
+          <div className="ghz-marqueeTrack">
+            <div className="ghz-slice ghz-slice--a">
+              <img alt="" src={imgDitheredImage20260210T1657231} />
+            </div>
+            <div className="ghz-slice ghz-slice--b">
+              <img alt="" src={imgDitheredImage20260210T1703381} />
+            </div>
+            <div className="ghz-slice ghz-slice--c">
+              <img alt="" src={imgDitheredImage20260210T1703383} />
+            </div>
+            <div className="ghz-slice ghz-slice--d">
+              <img alt="" src={imgDitheredImage20260210T1703382} />
+            </div>
+
+            <div className="ghz-slice ghz-slice--a" aria-hidden="true">
+              <img alt="" src={imgDitheredImage20260210T1657231} />
+            </div>
+            <div className="ghz-slice ghz-slice--b" aria-hidden="true">
+              <img alt="" src={imgDitheredImage20260210T1703381} />
+            </div>
+            <div className="ghz-slice ghz-slice--c" aria-hidden="true">
+              <img alt="" src={imgDitheredImage20260210T1703383} />
+            </div>
+            <div className="ghz-slice ghz-slice--d" aria-hidden="true">
+              <img alt="" src={imgDitheredImage20260210T1703382} />
+            </div>
           </div>
         </div>
       </section>
