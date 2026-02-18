@@ -9,7 +9,7 @@ const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc3_xO3qk1OhoJWd-ICKl
 
 export default function App() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const texts = ["answer questions", "get matched to invites", "connect"];
+  const texts = ["answer questions", "get matched to invites", "connect", "super 30 meetup on 19th"];
 
   useEffect(() => {
     const interval = setInterval(() => {
