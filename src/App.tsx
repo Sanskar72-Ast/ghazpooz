@@ -5,6 +5,8 @@ import imgDitheredImage20260210T1703382 from "figma:asset/d3b95118f2b5ab35308dd3
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
+const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc3_xO3qk1OhoJWd-ICKl-F_jaFQUc0UntcYQ19DsUe5jJ_Dg/viewform?usp=publish-editor";
+
 export default function App() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const texts = ["answer questions", "get matched to invites", "connect"];
@@ -16,6 +18,8 @@ export default function App() {
 
     return () => clearInterval(interval);
   }, []);
+
+  const handleEnter = () => window.open(FORM_URL, "_blank");
 
   return (
     <>
@@ -44,7 +48,7 @@ export default function App() {
           <span className="leading-[normal]">{`The people matchmaker ai `}</span>
           <span className="leading-[normal]">at the summit</span>
         </p>
-        <button className="-translate-x-1/2 absolute h-[62px] left-[calc(50%-405px)] top-[501px] w-[352px] cursor-pointer hover:opacity-95 transition-opacity">
+        <button onClick={handleEnter} className="-translate-x-1/2 absolute h-[62px] left-[calc(50%-405px)] top-[501px] w-[352px] cursor-pointer hover:opacity-95 transition-opacity">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 352 62">
             <path d="M0 0H352V62H0V0Z" fill="var(--fill-0, #FAFAFA)" id="Rectangle 1" />
           </svg>
@@ -81,7 +85,7 @@ export default function App() {
           <span className="leading-[normal]">{`The people matchmaker ai `}</span>
           <span className="leading-[normal]">at the summit</span>
         </p>
-        <button className="-translate-x-1/2 absolute h-[62px] left-1/2 top-[397px] w-[352px] cursor-pointer hover:opacity-95 transition-opacity">
+        <button onClick={handleEnter} className="-translate-x-1/2 absolute h-[62px] left-1/2 top-[397px] w-[352px] cursor-pointer hover:opacity-95 transition-opacity">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 352 62">
             <path d="M0 0H352V62H0V0Z" fill="var(--fill-0, #FAFAFA)" id="Rectangle 1" />
           </svg>
