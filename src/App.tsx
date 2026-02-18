@@ -17,83 +17,28 @@ export default function App() {
     }, 2800);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [texts.length]);
 
   const handleEnter = () => window.open(FORM_URL, "_blank");
 
   return (
-    <>
-      {/* Desktop Layout */}
-      <div className="hidden md:block bg-black relative w-screen h-screen overflow-hidden" data-name="ghazpooz">
-        <div className="-translate-x-1/2 absolute h-[19px] left-[calc(50%-405px)] top-[587px] w-[176px]" data-name="Component 1">
-          <AnimatePresence mode="wait">
-            <motion.p
-              key={currentTextIndex}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="absolute font-['Manrope:Regular',sans-serif] font-normal inset-0 leading-[normal] text-[#868686] text-[14px] text-center whitespace-pre-wrap"
-            >
-              {texts[currentTextIndex]}
-            </motion.p>
-          </AnimatePresence>
-        </div>
-        <div className="-translate-x-1/2 absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold h-[186px] leading-[62px] left-[calc(50%-405px)] text-[54px] text-center text-white top-[227px] tracking-[-1.62px] w-[430px] whitespace-pre-wrap">
-          <p className="mb-0">hello,</p>
-          <p className="mb-0">it's ghazpooz.</p>
-          <p>sup?</p>
-        </div>
-        <p className="-translate-x-1/2 absolute font-['Manrope:Regular',sans-serif] font-normal h-[21px] leading-[0] left-[calc(50%-405px)] text-[#c0c0c0] text-[16px] text-center top-[436px] w-[410px] whitespace-pre-wrap">
-          <span className="leading-[normal]">{`The people matchmaker ai `}</span>
-          <span className="leading-[normal]">at the summit</span>
-        </p>
-        <button onClick={handleEnter} className="-translate-x-1/2 absolute h-[62px] left-[calc(50%-405px)] top-[501px] w-[352px] cursor-pointer hover:opacity-95 transition-opacity">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 352 62">
-            <path d="M0 0H352V62H0V0Z" fill="var(--fill-0, #FAFAFA)" id="Rectangle 1" />
-          </svg>
-          <div className="absolute inset-0 flex flex-col font-['Manrope:SemiBold',sans-serif] font-semibold justify-center leading-[0] text-[16px] text-black text-center">
-            <p className="leading-[normal] whitespace-pre-wrap">enter</p>
-          </div>
-        </button>
-        <div className="absolute h-[828px] left-[440px] top-[4px] w-[200px]" data-name="dithered-image-2026-02-10T16-57-23 1">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgDitheredImage20260210T1657231} />
-        </div>
-        <div className="absolute h-[828px] left-[650px] top-[4px] w-[200px]" data-name="dithered-image-2026-02-10T17-03-38 1">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgDitheredImage20260210T1703381} />
-        </div>
-        <div className="absolute h-[828px] left-[860px] top-[4px] w-[200px]" data-name="dithered-image-2026-02-10T17-03-38 3">
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[109.29%] left-[-220.04%] max-w-none top-0 w-[573.66%]" src={imgDitheredImage20260210T1703383} />
-          </div>
-        </div>
-        <div className="absolute h-[828px] left-[1070px] top-[4px] w-[200px]" data-name="dithered-image-2026-02-10T17-03-38 2">
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-full left-[-64.82%] max-w-none top-[0.01%] w-[310.5%]" src={imgDitheredImage20260210T1703382} />
-          </div>
-        </div>
-      </div>
+    <div className="ghz-page" data-name="ghazpooz">
+      <section className="ghz-left">
+        <h1 className="ghz-title">
+          hello,
+          <br />
+          it's ghazpooz.
+          <br />
+          sup?
+        </h1>
 
-      {/* Mobile Layout */}
-      <div className="md:hidden bg-black relative w-screen h-screen overflow-hidden" data-name="ghazpooz-mobile">
-        <div className="-translate-x-1/2 absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold h-[186px] leading-[62px] left-1/2 text-[54px] text-center text-white top-[123px] tracking-[-1.62px] w-[430px] whitespace-pre-wrap">
-          <p className="mb-0">hello,</p>
-          <p className="mb-0">it's ghazpooz.</p>
-          <p>sup?</p>
-        </div>
-        <p className="-translate-x-1/2 absolute font-['Manrope:Regular',sans-serif] font-normal h-[21px] leading-[0] left-1/2 text-[#c0c0c0] text-[16px] text-center top-[332px] w-[410px] whitespace-pre-wrap">
-          <span className="leading-[normal]">{`The people matchmaker ai `}</span>
-          <span className="leading-[normal]">at the summit</span>
-        </p>
-        <button onClick={handleEnter} className="-translate-x-1/2 absolute h-[62px] left-1/2 top-[397px] w-[352px] cursor-pointer hover:opacity-95 transition-opacity">
-          <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 352 62">
-            <path d="M0 0H352V62H0V0Z" fill="var(--fill-0, #FAFAFA)" id="Rectangle 1" />
-          </svg>
-          <div className="absolute inset-0 flex flex-col font-['Manrope:SemiBold',sans-serif] font-semibold justify-center leading-[0] text-[16px] text-black text-center">
-            <p className="leading-[normal] whitespace-pre-wrap">enter</p>
-          </div>
+        <p className="ghz-subtitle">The people matchmaker ai at the summit</p>
+
+        <button onClick={handleEnter} className="ghz-cta" type="button">
+          enter
         </button>
-        <div className="-translate-x-1/2 absolute h-[19px] left-1/2 top-[483px] w-[176px]">
+
+        <div className="ghz-rotator" aria-live="polite">
           <AnimatePresence mode="wait">
             <motion.p
               key={currentTextIndex}
@@ -101,54 +46,30 @@ export default function App() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="absolute inset-0 font-['Manrope:Regular',sans-serif] font-normal text-[#868686] text-[14px] text-center whitespace-nowrap"
+              style={{ position: "absolute", inset: 0 }}
             >
               {texts[currentTextIndex]}
             </motion.p>
           </AnimatePresence>
         </div>
-        <div className="absolute left-0 top-[570px] w-full h-[218px] overflow-hidden">
-          <motion.div
-            className="flex absolute left-0"
-            animate={{
-              x: [0, -((164 + 21) * 4)],
-            }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 25,
-                ease: "linear",
-              },
-            }}
-          >
-            <div className="h-[218px] w-[164px] flex-shrink-0 mr-[21px]">
-              <img alt="" className="size-full object-cover pointer-events-none" src={imgDitheredImage20260210T1657231} />
-            </div>
-            <div className="h-[218px] w-[164px] flex-shrink-0 mr-[21px]">
-              <img alt="" className="size-full object-cover pointer-events-none" src={imgDitheredImage20260210T1703381} />
-            </div>
-            <div className="h-[218px] w-[164px] flex-shrink-0 mr-[21px]">
-              <img alt="" className="size-full object-cover pointer-events-none" src={imgDitheredImage20260210T1703383} />
-            </div>
-            <div className="h-[218px] w-[164px] flex-shrink-0 mr-[21px]">
-              <img alt="" className="size-full object-cover pointer-events-none" src={imgDitheredImage20260210T1703382} />
-            </div>
-            <div className="h-[218px] w-[164px] flex-shrink-0 mr-[21px]">
-              <img alt="" className="size-full object-cover pointer-events-none" src={imgDitheredImage20260210T1657231} />
-            </div>
-            <div className="h-[218px] w-[164px] flex-shrink-0 mr-[21px]">
-              <img alt="" className="size-full object-cover pointer-events-none" src={imgDitheredImage20260210T1703381} />
-            </div>
-            <div className="h-[218px] w-[164px] flex-shrink-0 mr-[21px]">
-              <img alt="" className="size-full object-cover pointer-events-none" src={imgDitheredImage20260210T1703383} />
-            </div>
-            <div className="h-[218px] w-[164px] flex-shrink-0 mr-[21px]">
-              <img alt="" className="size-full object-cover pointer-events-none" src={imgDitheredImage20260210T1703382} />
-            </div>
-          </motion.div>
+      </section>
+
+      <section className="ghz-right" aria-hidden="true">
+        <div className="ghz-collage">
+          <div className="ghz-slice ghz-slice--a">
+            <img alt="" src={imgDitheredImage20260210T1657231} />
+          </div>
+          <div className="ghz-slice ghz-slice--b">
+            <img alt="" src={imgDitheredImage20260210T1703381} />
+          </div>
+          <div className="ghz-slice ghz-slice--c">
+            <img alt="" src={imgDitheredImage20260210T1703383} />
+          </div>
+          <div className="ghz-slice ghz-slice--d">
+            <img alt="" src={imgDitheredImage20260210T1703382} />
+          </div>
         </div>
-      </div>
-    </>
+      </section>
+    </div>
   );
 }
